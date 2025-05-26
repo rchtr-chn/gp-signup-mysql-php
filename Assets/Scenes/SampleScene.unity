@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25c95adad6ef824f995fc34a78234f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signUpURL: http://localhost/unity_signup/sign_up.php
+  signUpURL: https://binusgat.rf.gd/unity-api-test/api/auth/signup.php
   emailField: {fileID: 1688922801}
   passwordField: {fileID: 1952481492}
   confirmPasswordField: {fileID: 710592354}

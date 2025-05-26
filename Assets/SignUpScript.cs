@@ -9,7 +9,7 @@ using static SignUpScript;
 
 public class SignUpScript : MonoBehaviour
 {
-    public string signUpURL = "http://localhost/unity_signup/sign_up.php";
+    public string signUpURL = "https://binusgat.rf.gd/unity-api-test/api/auth/signup.php";
 
     public void OnSignUpButtonClick()
     {
@@ -34,13 +34,14 @@ public class SignUpScript : MonoBehaviour
         {
             email = email,
             password = password,
-            createDate = System.DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss")
+            createDate = System.DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")
         });
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
 
         request.uploadHandler = new UploadHandlerRaw(jsonToSend);
         request.downloadHandler = new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");
+        request.SetRequestHeader("User-Agent", "UnityWebRequest");
 
         yield return request.SendWebRequest();
 
